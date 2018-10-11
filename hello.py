@@ -8,6 +8,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/user/<name>')
-def user(name):
-    return render_template('user.html', name=name)
+# funcName在路由中定义了，是路由下面试图函数中的变量
+@app.route('/user/<funcName>')
+def user(funcName):
+    # pagename 是在user.html中使用的变量
+    return render_template('user.html', pagename=funcName)
+
